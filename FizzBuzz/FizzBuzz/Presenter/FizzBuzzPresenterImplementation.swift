@@ -10,10 +10,13 @@ import Foundation
 class FizzBuzzPresenterImplementation: FizzBuzzPresenter {
 
     private weak var viewContract: FizzBuzzViewContract?
+    private let getFizzBuzzResultInteractor: GetFizzBuzzResultInteractor
     private var fizzBuzz = FizzBuzz.default
 
-    init(viewContract: FizzBuzzViewContract) {
+    init(viewContract: FizzBuzzViewContract,
+         getFizzBuzzResultInteractor: GetFizzBuzzResultInteractor) {
         self.viewContract = viewContract
+        self.getFizzBuzzResultInteractor = getFizzBuzzResultInteractor
     }
 
     // MARK: - FizzBuzzPresenter
@@ -36,12 +39,15 @@ class FizzBuzzPresenterImplementation: FizzBuzzPresenter {
         case .limit:
             fizzBuzz.limit = Int(text) ?? 100
         }
+        reloadViewModel()
     }
 
     // MARK: - Private
 
     private func reloadViewModel() {
-        let viewModel = FizzBuzzViewModel(result: "FizzBuzz")
-        viewContract?.display(viewModel: viewModel)
+        getFizzBuzzResultInteractor.execute(fizzBuzz) { [weak self] result in
+            let viewModel = FizzBuzzViewModel(result: result)
+            self?.viewContract?.display(viewModel: viewModel)
+        }
     }
 }

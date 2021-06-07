@@ -22,7 +22,10 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let window = UIWindow(windowScene: windowScene)
 
         let viewController = FizzBuzzViewController()
-        let presenter = FizzBuzzPresenterImplementation(viewContract: viewController)
+        let presenter = FizzBuzzPresenterImplementation(
+            viewContract: viewController,
+            getFizzBuzzResultInteractor: GetFizzBuzzResultInteractorImplementation()
+        )
         viewController.presenter = presenter
         window.rootViewController = viewController
 

@@ -13,6 +13,8 @@
 		4A2A1DBD266E6CD800661CE7 /* FizzBuzzViewContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A2A1DBC266E6CD800661CE7 /* FizzBuzzViewContract.swift */; };
 		4A2A1DBF266E6ECD00661CE7 /* FizzBuzz.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A2A1DBE266E6ECD00661CE7 /* FizzBuzz.swift */; };
 		4A2A1DC3266E726F00661CE7 /* FizzBuzzViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A2A1DC2266E726F00661CE7 /* FizzBuzzViewModel.swift */; };
+		4A2A1DC8266E750F00661CE7 /* GetFizzBuzzResultInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A2A1DC7266E750F00661CE7 /* GetFizzBuzzResultInteractor.swift */; };
+		4A2A1DCA266E751800661CE7 /* GetFizzBuzzResultInteractorImplementation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A2A1DC9266E751800661CE7 /* GetFizzBuzzResultInteractorImplementation.swift */; };
 		4A6F7CEC266E1F1C0044F58B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A6F7CEB266E1F1C0044F58B /* AppDelegate.swift */; };
 		4A6F7CEE266E1F1C0044F58B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A6F7CED266E1F1C0044F58B /* SceneDelegate.swift */; };
 		4A6F7CF0266E1F1C0044F58B /* FizzBuzzViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A6F7CEF266E1F1C0044F58B /* FizzBuzzViewController.swift */; };
@@ -27,6 +29,8 @@
 		4A2A1DBC266E6CD800661CE7 /* FizzBuzzViewContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FizzBuzzViewContract.swift; sourceTree = "<group>"; };
 		4A2A1DBE266E6ECD00661CE7 /* FizzBuzz.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FizzBuzz.swift; sourceTree = "<group>"; };
 		4A2A1DC2266E726F00661CE7 /* FizzBuzzViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FizzBuzzViewModel.swift; sourceTree = "<group>"; };
+		4A2A1DC7266E750F00661CE7 /* GetFizzBuzzResultInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetFizzBuzzResultInteractor.swift; sourceTree = "<group>"; };
+		4A2A1DC9266E751800661CE7 /* GetFizzBuzzResultInteractorImplementation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetFizzBuzzResultInteractorImplementation.swift; sourceTree = "<group>"; };
 		4A6F7CE8266E1F1C0044F58B /* FizzBuzz.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FizzBuzz.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4A6F7CEB266E1F1C0044F58B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4A6F7CED266E1F1C0044F58B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -92,6 +96,15 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		4A2A1DC6266E74EE00661CE7 /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				4A2A1DC7266E750F00661CE7 /* GetFizzBuzzResultInteractor.swift */,
+				4A2A1DC9266E751800661CE7 /* GetFizzBuzzResultInteractorImplementation.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
 		4A6F7CDF266E1F1C0044F58B = {
 			isa = PBXGroup;
 			children = (
@@ -113,6 +126,7 @@
 			children = (
 				4A6F7CEB266E1F1C0044F58B /* AppDelegate.swift */,
 				4A6F7CED266E1F1C0044F58B /* SceneDelegate.swift */,
+				4A2A1DC6266E74EE00661CE7 /* Interactor */,
 				4A2A1DB5266E6C8100661CE7 /* FizzBuzz */,
 				4A6F7CFF266E1F370044F58B /* Resources */,
 				4A6F7CF9266E1F1E0044F58B /* Info.plist */,
@@ -202,7 +216,9 @@
 			files = (
 				4A2A1DB7266E6C9800661CE7 /* FizzBuzzPresenter.swift in Sources */,
 				4A6F7CF0266E1F1C0044F58B /* FizzBuzzViewController.swift in Sources */,
+				4A2A1DCA266E751800661CE7 /* GetFizzBuzzResultInteractorImplementation.swift in Sources */,
 				4A2A1DBD266E6CD800661CE7 /* FizzBuzzViewContract.swift in Sources */,
+				4A2A1DC8266E750F00661CE7 /* GetFizzBuzzResultInteractor.swift in Sources */,
 				4A2A1DBB266E6CC100661CE7 /* FizzBuzzPresenterImplementation.swift in Sources */,
 				4A2A1DC3266E726F00661CE7 /* FizzBuzzViewModel.swift in Sources */,
 				4A2A1DBF266E6ECD00661CE7 /* FizzBuzz.swift in Sources */,
