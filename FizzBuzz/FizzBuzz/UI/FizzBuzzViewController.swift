@@ -8,7 +8,9 @@
 import Foundation
 import UIKit
 
-class FizzBuzzViewController: UIViewController {
+class FizzBuzzViewController: UIViewController, FizzBuzzViewContract {
+
+    var presenter: FizzBuzzPresenter?
 
     private lazy var fizzNumberField = createNumberField(placeholder: NSLocalizedString("fizz_value_textfield_placeholder", comment: ""))
     private lazy var buzzNumberField = createNumberField(placeholder: NSLocalizedString("buzz_value_textfield_placeholder", comment: ""))
