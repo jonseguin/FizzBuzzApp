@@ -1,0 +1,13 @@
+/* 
+  Localizable.strings
+  FizzBuzz
+
+  Created by Jonathan Seguin on 07/06/2021.
+  
+*/
+
+"fizz_value_textfield_placeholder" = "Fizz value ?";
+"buzz_value_textfield_placeholder" = "Buzz value ?";
+"fizz_text_textfield_placeholder" = "Fizz text ?";
+"buzz_text_textfield_placeholder" = "Buzz text ?";
+"limit_textfield_placeholder" = "Limit ?";

@@ -5,15 +5,16 @@
 //  Created by Jonathan Seguin on 07/06/2021.
 //
 
+import Foundation
 import UIKit
 
 class FizzBuzzViewController: UIViewController {
 
-    private lazy var fizzNumberField = createNumberField()
-    private lazy var buzzNumberField = createNumberField()
-    private lazy var limitNumberField = createNumberField()
-    private lazy var fizzTextField = createTextField()
-    private lazy var buzzTextField = createTextField()
+    private lazy var fizzNumberField = createNumberField(placeholder: NSLocalizedString("fizz_value_textfield_placeholder", comment: ""))
+    private lazy var buzzNumberField = createNumberField(placeholder: NSLocalizedString("buzz_value_textfield_placeholder", comment: ""))
+    private lazy var limitNumberField = createNumberField(placeholder: NSLocalizedString("limit_textfield_placeholder", comment: ""))
+    private lazy var fizzTextField = createTextField(placeholder: NSLocalizedString("fizz_text_textfield_placeholder", comment: ""))
+    private lazy var buzzTextField = createTextField(placeholder: NSLocalizedString("buzz_text_textfield_placeholder", comment: ""))
     private lazy var resultLabel = createResultLabel()
 
     override func viewDidLoad() {
@@ -44,23 +45,27 @@ class FizzBuzzViewController: UIViewController {
         resultLabel.topAnchor.constraint(equalTo: stackView.bottomAnchor, constant: 16.0).isActive = true
         resultLabel.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 16.0).isActive = true
         resultLabel.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -16.0).isActive = true
-        resultLabel.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 16.0).isActive = true
+        resultLabel.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -16.0).isActive = true
         resultLabel.translatesAutoresizingMaskIntoConstraints = false
     }
 
-    private func createNumberField() -> UITextField {
+    private func createNumberField(placeholder: String) -> UITextField {
         let textField = UITextField()
-        textField.keyboardType = .decimalPad
+        textField.keyboardType = .numberPad
+        textField.returnKeyType = .next
         textField.backgroundColor = .yellow.withAlphaComponent(0.3)
         textField.heightAnchor.constraint(equalToConstant: 48).isActive = true
+        textField.placeholder = placeholder
         return textField
     }
 
-    private func createTextField() -> UITextField {
+    private func createTextField(placeholder: String) -> UITextField {
         let textField = UITextField()
         textField.keyboardType = .alphabet
+        textField.returnKeyType = .next
         textField.backgroundColor = .green.withAlphaComponent(0.3)
         textField.heightAnchor.constraint(equalToConstant: 48).isActive = true
+        textField.placeholder = placeholder
         return textField
     }
 
@@ -72,4 +77,3 @@ class FizzBuzzViewController: UIViewController {
         return label
     }
 }
-
