@@ -8,6 +8,11 @@
 import Foundation
 import UIKit
 
+private enum Constants {
+    static let defaultMargin: CGFloat = 16.0
+    static let defaultSpacing: CGFloat = 12.0
+}
+
 class FizzBuzzViewController: UIViewController, FizzBuzzViewContract {
 
     var presenter: FizzBuzzPresenter?
@@ -39,22 +44,37 @@ class FizzBuzzViewController: UIViewController, FizzBuzzViewContract {
         stackView.axis = .vertical
         stackView.alignment = .fill
         stackView.distribution = .fillEqually
-        stackView.spacing = 12.0
+        stackView.spacing = Constants.defaultSpacing
         view.addSubview(stackView)
 
         [fizzNumberField, buzzNumberField, limitNumberField, fizzTextField, buzzTextField].forEach {
             stackView.addArrangedSubview($0)
         }
-        stackView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 16.0).isActive = true
-        stackView.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 16.0).isActive = true
-        stackView.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -16.0).isActive = true
+        stackView.setCustomSpacing(Constants.defaultSpacing*2, after: limitNumberField)
+        stackView.topAnchor
+            .constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: Constants.defaultMargin)
+            .isActive = true
+        stackView.leftAnchor
+            .constraint(equalTo: view.leftAnchor, constant: Constants.defaultMargin)
+            .isActive = true
+        stackView.rightAnchor
+            .constraint(equalTo: view.rightAnchor, constant: -Constants.defaultMargin)
+            .isActive = true
         stackView.translatesAutoresizingMaskIntoConstraints = false
 
         view.addSubview(resultLabel)
-        resultLabel.topAnchor.constraint(equalTo: stackView.bottomAnchor, constant: 16.0).isActive = true
-        resultLabel.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 16.0).isActive = true
-        resultLabel.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -16.0).isActive = true
-        resultLabel.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -16.0).isActive = true
+        resultLabel.topAnchor
+            .constraint(equalTo: stackView.bottomAnchor, constant: Constants.defaultMargin)
+            .isActive = true
+        resultLabel.leftAnchor
+            .constraint(equalTo: view.leftAnchor, constant: Constants.defaultMargin)
+            .isActive = true
+        resultLabel.rightAnchor
+            .constraint(equalTo: view.rightAnchor, constant: -Constants.defaultMargin)
+            .isActive = true
+        resultLabel.bottomAnchor
+            .constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -Constants.defaultMargin)
+            .isActive = true
         resultLabel.translatesAutoresizingMaskIntoConstraints = false
     }
 
@@ -62,10 +82,11 @@ class FizzBuzzViewController: UIViewController, FizzBuzzViewContract {
         let textField = UITextField()
         textField.keyboardType = .numberPad
         textField.returnKeyType = .next
-        textField.backgroundColor = .yellow.withAlphaComponent(0.3)
         textField.heightAnchor.constraint(equalToConstant: 48).isActive = true
         textField.placeholder = placeholder
         textField.addTarget(self, action: #selector(textDidChange), for: .editingChanged)
+        textField.borderStyle = .roundedRect
+        textField.clearButtonMode = .whileEditing
         return textField
     }
 
@@ -73,10 +94,11 @@ class FizzBuzzViewController: UIViewController, FizzBuzzViewContract {
         let textField = UITextField()
         textField.keyboardType = .alphabet
         textField.returnKeyType = .next
-        textField.backgroundColor = .green.withAlphaComponent(0.3)
         textField.heightAnchor.constraint(equalToConstant: 48).isActive = true
         textField.placeholder = placeholder
         textField.addTarget(self, action: #selector(textDidChange), for: .editingChanged)
+        textField.borderStyle = .roundedRect
+        textField.clearButtonMode = .whileEditing
         return textField
     }
 
@@ -84,7 +106,6 @@ class FizzBuzzViewController: UIViewController, FizzBuzzViewContract {
         let label = UILabel()
         label.numberOfLines = 0
         label.textColor = .black
-        label.backgroundColor = .red.withAlphaComponent(0.3)
         return label
     }
 
