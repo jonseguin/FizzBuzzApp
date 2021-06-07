@@ -9,8 +9,7 @@
 /* Begin PBXBuildFile section */
 		4A6F7CEC266E1F1C0044F58B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A6F7CEB266E1F1C0044F58B /* AppDelegate.swift */; };
 		4A6F7CEE266E1F1C0044F58B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A6F7CED266E1F1C0044F58B /* SceneDelegate.swift */; };
-		4A6F7CF0266E1F1C0044F58B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A6F7CEF266E1F1C0044F58B /* ViewController.swift */; };
-		4A6F7CF3266E1F1C0044F58B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4A6F7CF1266E1F1C0044F58B /* Main.storyboard */; };
+		4A6F7CF0266E1F1C0044F58B /* FizzBuzzViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A6F7CEF266E1F1C0044F58B /* FizzBuzzViewController.swift */; };
 		4A6F7CF5266E1F1E0044F58B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4A6F7CF4266E1F1E0044F58B /* Assets.xcassets */; };
 		4A6F7CF8266E1F1E0044F58B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4A6F7CF6266E1F1E0044F58B /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
@@ -19,8 +18,7 @@
 		4A6F7CE8266E1F1C0044F58B /* FizzBuzz.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FizzBuzz.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4A6F7CEB266E1F1C0044F58B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4A6F7CED266E1F1C0044F58B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		4A6F7CEF266E1F1C0044F58B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		4A6F7CF2266E1F1C0044F58B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		4A6F7CEF266E1F1C0044F58B /* FizzBuzzViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FizzBuzzViewController.swift; sourceTree = "<group>"; };
 		4A6F7CF4266E1F1E0044F58B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4A6F7CF7266E1F1E0044F58B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4A6F7CF9266E1F1E0044F58B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -58,13 +56,20 @@
 			children = (
 				4A6F7CEB266E1F1C0044F58B /* AppDelegate.swift */,
 				4A6F7CED266E1F1C0044F58B /* SceneDelegate.swift */,
-				4A6F7CEF266E1F1C0044F58B /* ViewController.swift */,
-				4A6F7CF1266E1F1C0044F58B /* Main.storyboard */,
-				4A6F7CF4266E1F1E0044F58B /* Assets.xcassets */,
-				4A6F7CF6266E1F1E0044F58B /* LaunchScreen.storyboard */,
+				4A6F7CEF266E1F1C0044F58B /* FizzBuzzViewController.swift */,
+				4A6F7CFF266E1F370044F58B /* Resources */,
 				4A6F7CF9266E1F1E0044F58B /* Info.plist */,
 			);
 			path = FizzBuzz;
+			sourceTree = "<group>";
+		};
+		4A6F7CFF266E1F370044F58B /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				4A6F7CF4266E1F1E0044F58B /* Assets.xcassets */,
+				4A6F7CF6266E1F1E0044F58B /* LaunchScreen.storyboard */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -126,7 +131,6 @@
 			files = (
 				4A6F7CF8266E1F1E0044F58B /* LaunchScreen.storyboard in Resources */,
 				4A6F7CF5266E1F1E0044F58B /* Assets.xcassets in Resources */,
-				4A6F7CF3266E1F1C0044F58B /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -137,7 +141,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4A6F7CF0266E1F1C0044F58B /* ViewController.swift in Sources */,
+				4A6F7CF0266E1F1C0044F58B /* FizzBuzzViewController.swift in Sources */,
 				4A6F7CEC266E1F1C0044F58B /* AppDelegate.swift in Sources */,
 				4A6F7CEE266E1F1C0044F58B /* SceneDelegate.swift in Sources */,
 			);
@@ -146,14 +150,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		4A6F7CF1266E1F1C0044F58B /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				4A6F7CF2266E1F1C0044F58B /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		4A6F7CF6266E1F1E0044F58B /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
