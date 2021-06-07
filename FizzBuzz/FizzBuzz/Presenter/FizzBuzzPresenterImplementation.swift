@@ -18,7 +18,12 @@ class FizzBuzzPresenterImplementation: FizzBuzzPresenter {
 
     // MARK: - FizzBuzzPresenter
 
-    func didUpdate(text: String, fieldType: FizzBuzzFieldType) {
+    func start() {
+        reloadViewModel()
+    }
+
+    func didUpdate(fieldType: FizzBuzzFieldType, with text: String?) {
+        guard let text = text else { return }
         switch fieldType {
         case .fizzValue:
             fizzBuzz.fizzValue = Int(text) ?? 3
@@ -31,5 +36,12 @@ class FizzBuzzPresenterImplementation: FizzBuzzPresenter {
         case .limit:
             fizzBuzz.limit = Int(text) ?? 100
         }
+    }
+
+    // MARK: - Private
+
+    private func reloadViewModel() {
+        let viewModel = FizzBuzzViewModel(result: "FizzBuzz")
+        viewContract?.display(viewModel: viewModel)
     }
 }

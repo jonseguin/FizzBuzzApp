@@ -22,6 +22,13 @@ class FizzBuzzViewController: UIViewController, FizzBuzzViewContract {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
+        presenter?.start()
+    }
+
+    // MARK: - FizzBuzzViewContract
+
+    func display(viewModel: FizzBuzzViewModel) {
+        resultLabel.text = viewModel.result
     }
 
     // MARK: - Private
@@ -58,6 +65,7 @@ class FizzBuzzViewController: UIViewController, FizzBuzzViewContract {
         textField.backgroundColor = .yellow.withAlphaComponent(0.3)
         textField.heightAnchor.constraint(equalToConstant: 48).isActive = true
         textField.placeholder = placeholder
+        textField.addTarget(self, action: #selector(textDidChange), for: .editingChanged)
         return textField
     }
 
@@ -68,6 +76,7 @@ class FizzBuzzViewController: UIViewController, FizzBuzzViewContract {
         textField.backgroundColor = .green.withAlphaComponent(0.3)
         textField.heightAnchor.constraint(equalToConstant: 48).isActive = true
         textField.placeholder = placeholder
+        textField.addTarget(self, action: #selector(textDidChange), for: .editingChanged)
         return textField
     }
 
@@ -77,5 +86,22 @@ class FizzBuzzViewController: UIViewController, FizzBuzzViewContract {
         label.textColor = .black
         label.backgroundColor = .red.withAlphaComponent(0.3)
         return label
+    }
+
+    @objc private func textDidChange(_ textField: UITextField) {
+        switch textField {
+        case fizzNumberField:
+            presenter?.didUpdate(fieldType: .fizzValue, with: textField.text)
+        case buzzNumberField:
+            presenter?.didUpdate(fieldType: .buzzValue, with: textField.text)
+        case fizzTextField:
+            presenter?.didUpdate(fieldType: .fizzText, with: textField.text)
+        case buzzTextField:
+            presenter?.didUpdate(fieldType: .buzzText, with: textField.text)
+        case limitNumberField:
+            presenter?.didUpdate(fieldType: .limit, with: textField.text)
+        default:
+            break
+        }
     }
 }

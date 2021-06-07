@@ -6,5 +6,6 @@
 //
 
 protocol FizzBuzzPresenter: AnyObject {
-    func didUpdate(text: String, fieldType: FizzBuzzFieldType)
+    func start()
+    func didUpdate(fieldType: FizzBuzzFieldType, with text: String?)
 }

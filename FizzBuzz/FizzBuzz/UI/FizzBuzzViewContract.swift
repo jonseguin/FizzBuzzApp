@@ -6,4 +6,5 @@
 //
 
 protocol FizzBuzzViewContract: AnyObject {
+    func display(viewModel: FizzBuzzViewModel)
 }
