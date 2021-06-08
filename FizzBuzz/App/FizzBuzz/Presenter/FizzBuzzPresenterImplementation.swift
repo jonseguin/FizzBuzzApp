@@ -11,12 +11,15 @@ class FizzBuzzPresenterImplementation: FizzBuzzPresenter {
 
     private weak var viewContract: FizzBuzzViewContract?
     private let getFizzBuzzResultInteractor: GetFizzBuzzResultInteractor
+    private let textFieldTrackingRepository: TextFieldTrackingRepository
     private var fizzBuzz = FizzBuzz.default
 
     init(viewContract: FizzBuzzViewContract,
-         getFizzBuzzResultInteractor: GetFizzBuzzResultInteractor) {
+         getFizzBuzzResultInteractor: GetFizzBuzzResultInteractor,
+         textFieldTrackingRepository: TextFieldTrackingRepository) {
         self.viewContract = viewContract
         self.getFizzBuzzResultInteractor = getFizzBuzzResultInteractor
+        self.textFieldTrackingRepository = textFieldTrackingRepository
     }
 
     // MARK: - FizzBuzzPresenter
@@ -39,6 +42,7 @@ class FizzBuzzPresenterImplementation: FizzBuzzPresenter {
         case .limit:
             fizzBuzz.limit = Int(text) ?? FizzBuzz.default.limit
         }
+        textFieldTrackingRepository.incrementHit(for: fieldType)
         reloadViewModel()
     }
 

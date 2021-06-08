@@ -19,7 +19,8 @@ class HomeRouter {
         let viewController = FizzBuzzViewController()
         let presenter = FizzBuzzPresenterImplementation(
             viewContract: viewController,
-            getFizzBuzzResultInteractor: GetFizzBuzzResultInteractorImplementation()
+            getFizzBuzzResultInteractor: GetFizzBuzzResultInteractorImplementation(),
+            textFieldTrackingRepository: TextFieldTrackingRepositoryImplementation()
         )
         viewController.presenter = presenter
 

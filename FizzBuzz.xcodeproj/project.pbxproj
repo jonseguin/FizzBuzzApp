@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		4A1795E0266F5CCE00BC811A /* HomeRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A1795DF266F5CCE00BC811A /* HomeRouter.swift */; };
+		4A1795E5266F608E00BC811A /* TextFieldTrackingRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A1795E4266F608E00BC811A /* TextFieldTrackingRepository.swift */; };
+		4A1795E7266F609800BC811A /* TextFieldTrackingRepositoryImplementation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A1795E6266F609800BC811A /* TextFieldTrackingRepositoryImplementation.swift */; };
 		4A2A1DB4266E68EF00661CE7 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4A2A1DB3266E68EF00661CE7 /* Localizable.strings */; };
 		4A2A1DB7266E6C9800661CE7 /* FizzBuzzPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A2A1DB6266E6C9800661CE7 /* FizzBuzzPresenter.swift */; };
 		4A2A1DBB266E6CC100661CE7 /* FizzBuzzPresenterImplementation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A2A1DBA266E6CC100661CE7 /* FizzBuzzPresenterImplementation.swift */; };
@@ -25,6 +27,8 @@
 
 /* Begin PBXFileReference section */
 		4A1795DF266F5CCE00BC811A /* HomeRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRouter.swift; sourceTree = "<group>"; };
+		4A1795E4266F608E00BC811A /* TextFieldTrackingRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldTrackingRepository.swift; sourceTree = "<group>"; };
+		4A1795E6266F609800BC811A /* TextFieldTrackingRepositoryImplementation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldTrackingRepositoryImplementation.swift; sourceTree = "<group>"; };
 		4A2A1DB3266E68EF00661CE7 /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		4A2A1DB6266E6C9800661CE7 /* FizzBuzzPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FizzBuzzPresenter.swift; sourceTree = "<group>"; };
 		4A2A1DBA266E6CC100661CE7 /* FizzBuzzPresenterImplementation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FizzBuzzPresenterImplementation.swift; sourceTree = "<group>"; };
@@ -59,6 +63,40 @@
 				4A1795DF266F5CCE00BC811A /* HomeRouter.swift */,
 			);
 			path = Router;
+			sourceTree = "<group>";
+		};
+		4A1795E1266F602100BC811A /* GetFizzBuzzResult */ = {
+			isa = PBXGroup;
+			children = (
+				4A2A1DC7266E750F00661CE7 /* GetFizzBuzzResultInteractor.swift */,
+				4A2A1DC9266E751800661CE7 /* GetFizzBuzzResultInteractorImplementation.swift */,
+			);
+			path = GetFizzBuzzResult;
+			sourceTree = "<group>";
+		};
+		4A1795E3266F604500BC811A /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+				4A1795E8266F609D00BC811A /* TextFieldTracking */,
+			);
+			name = Repository;
+			sourceTree = "<group>";
+		};
+		4A1795E8266F609D00BC811A /* TextFieldTracking */ = {
+			isa = PBXGroup;
+			children = (
+				4A1795E4266F608E00BC811A /* TextFieldTrackingRepository.swift */,
+				4A1795E6266F609800BC811A /* TextFieldTrackingRepositoryImplementation.swift */,
+			);
+			name = TextFieldTracking;
+			sourceTree = "<group>";
+		};
+		4A1795E9266F60A400BC811A /* App */ = {
+			isa = PBXGroup;
+			children = (
+				4A2A1DB5266E6C8100661CE7 /* FizzBuzz */,
+			);
+			path = App;
 			sourceTree = "<group>";
 		};
 		4A2A1DB5266E6C8100661CE7 /* FizzBuzz */ = {
@@ -109,8 +147,7 @@
 		4A2A1DC6266E74EE00661CE7 /* Interactor */ = {
 			isa = PBXGroup;
 			children = (
-				4A2A1DC7266E750F00661CE7 /* GetFizzBuzzResultInteractor.swift */,
-				4A2A1DC9266E751800661CE7 /* GetFizzBuzzResultInteractorImplementation.swift */,
+				4A1795E1266F602100BC811A /* GetFizzBuzzResult */,
 			);
 			path = Interactor;
 			sourceTree = "<group>";
@@ -137,8 +174,9 @@
 				4A6F7CEB266E1F1C0044F58B /* AppDelegate.swift */,
 				4A6F7CED266E1F1C0044F58B /* SceneDelegate.swift */,
 				4A1795DE266F5CC000BC811A /* Router */,
+				4A1795E3266F604500BC811A /* Repository */,
 				4A2A1DC6266E74EE00661CE7 /* Interactor */,
-				4A2A1DB5266E6C8100661CE7 /* FizzBuzz */,
+				4A1795E9266F60A400BC811A /* App */,
 				4A6F7CFF266E1F370044F58B /* Resources */,
 				4A6F7CF9266E1F1E0044F58B /* Info.plist */,
 			);
@@ -229,12 +267,14 @@
 				4A6F7CF0266E1F1C0044F58B /* FizzBuzzViewController.swift in Sources */,
 				4A2A1DCA266E751800661CE7 /* GetFizzBuzzResultInteractorImplementation.swift in Sources */,
 				4A2A1DBD266E6CD800661CE7 /* FizzBuzzViewContract.swift in Sources */,
+				4A1795E5266F608E00BC811A /* TextFieldTrackingRepository.swift in Sources */,
 				4A2A1DC8266E750F00661CE7 /* GetFizzBuzzResultInteractor.swift in Sources */,
 				4A2A1DBB266E6CC100661CE7 /* FizzBuzzPresenterImplementation.swift in Sources */,
 				4A2A1DC3266E726F00661CE7 /* FizzBuzzViewModel.swift in Sources */,
 				4A2A1DBF266E6ECD00661CE7 /* FizzBuzz.swift in Sources */,
 				4A6F7CEC266E1F1C0044F58B /* AppDelegate.swift in Sources */,
 				4A6F7CEE266E1F1C0044F58B /* SceneDelegate.swift in Sources */,
+				4A1795E7266F609800BC811A /* TextFieldTrackingRepositoryImplementation.swift in Sources */,
 				4A1795E0266F5CCE00BC811A /* HomeRouter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
