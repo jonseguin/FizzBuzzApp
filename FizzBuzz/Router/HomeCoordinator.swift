@@ -1,5 +1,5 @@
 //
-//  HomeRouter.swift
+//  HomeCoordinator.swift
 //  FizzBuzz
 //
 //  Created by Jonathan Seguin on 08/06/2021.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-class HomeRouter {
+class HomeCoordinator: NSObject, FizzBuzzPresenterDelegate {
 
     private let window: UIWindow
 
@@ -19,6 +19,7 @@ class HomeRouter {
         let viewController = FizzBuzzViewController()
         let presenter = FizzBuzzPresenterImplementation(
             viewContract: viewController,
+            delegate: self,
             getFizzBuzzResultInteractor: GetFizzBuzzResultInteractorImplementation(),
             textFieldTrackingRepository: TextFieldTrackingRepositoryImplementation()
         )
@@ -27,5 +28,11 @@ class HomeRouter {
         let navigationController = UINavigationController(rootViewController: viewController)
         window.rootViewController = navigationController
         window.makeKeyAndVisible()
+    }
+
+    // MARK: - FizzBuzzPresenterDelegate
+
+    func fizzBuzzPresenterDidRequestStatistics(_ presenter: FizzBuzzPresenter) {
+        // TODO Handle opening of statistics VC
     }
 }

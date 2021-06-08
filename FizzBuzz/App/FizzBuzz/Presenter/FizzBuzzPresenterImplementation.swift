@@ -10,14 +10,17 @@ import Foundation
 class FizzBuzzPresenterImplementation: FizzBuzzPresenter {
 
     private weak var viewContract: FizzBuzzViewContract?
+    private weak var delegate: FizzBuzzPresenterDelegate?
     private let getFizzBuzzResultInteractor: GetFizzBuzzResultInteractor
     private let textFieldTrackingRepository: TextFieldTrackingRepository
     private var fizzBuzz = FizzBuzz.default
 
     init(viewContract: FizzBuzzViewContract,
+         delegate: FizzBuzzPresenterDelegate,
          getFizzBuzzResultInteractor: GetFizzBuzzResultInteractor,
          textFieldTrackingRepository: TextFieldTrackingRepository) {
         self.viewContract = viewContract
+        self.delegate = delegate
         self.getFizzBuzzResultInteractor = getFizzBuzzResultInteractor
         self.textFieldTrackingRepository = textFieldTrackingRepository
     }
@@ -44,6 +47,10 @@ class FizzBuzzPresenterImplementation: FizzBuzzPresenter {
         }
         textFieldTrackingRepository.incrementHit(for: fieldType)
         reloadViewModel()
+    }
+
+    func didTapStatisticsButton() {
+        delegate?.fizzBuzzPresenterDidRequestStatistics(self)
     }
 
     // MARK: - Private

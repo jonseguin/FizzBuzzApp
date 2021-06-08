@@ -8,4 +8,9 @@
 protocol FizzBuzzPresenter: AnyObject {
     func start()
     func didUpdate(fieldType: FizzBuzzFieldType, with text: String?)
+    func didTapStatisticsButton()
+}
+
+protocol FizzBuzzPresenterDelegate: AnyObject {
+    func fizzBuzzPresenterDidRequestStatistics(_ presenter: FizzBuzzPresenter)
 }

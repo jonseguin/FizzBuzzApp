@@ -10,6 +10,7 @@ import UIKit
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
+    var homeCoordinator: HomeCoordinator?
 
     func scene(_ scene: UIScene,
                willConnectTo session: UISceneSession,
@@ -19,8 +20,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let window = UIWindow(windowScene: windowScene)
         self.window = window
 
-        let homeRouter = HomeRouter(window: window)
-        homeRouter.start()
+        let homeCoordinator = HomeCoordinator(window: window)
+        homeCoordinator.start()
+        self.homeCoordinator = homeCoordinator
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {
