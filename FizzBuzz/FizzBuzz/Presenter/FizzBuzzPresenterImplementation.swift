@@ -29,15 +29,15 @@ class FizzBuzzPresenterImplementation: FizzBuzzPresenter {
         guard let text = text else { return }
         switch fieldType {
         case .fizzValue:
-            fizzBuzz.fizzValue = Int(text) ?? 3
+            fizzBuzz.fizzValue = Int(text) ?? FizzBuzz.default.fizzValue
         case .buzzValue:
-            fizzBuzz.buzzValue = Int(text) ?? 5
+            fizzBuzz.buzzValue = Int(text) ?? FizzBuzz.default.buzzValue
         case .fizzText:
-            fizzBuzz.fizzText = text
+            fizzBuzz.fizzText = text.isEmpty ? FizzBuzz.default.fizzText : text
         case .buzzText:
-            fizzBuzz.buzzText = text
+            fizzBuzz.buzzText = text.isEmpty ? FizzBuzz.default.buzzText : text
         case .limit:
-            fizzBuzz.limit = Int(text) ?? 100
+            fizzBuzz.limit = Int(text) ?? FizzBuzz.default.limit
         }
         reloadViewModel()
     }
