@@ -40,6 +40,8 @@ class FizzBuzzViewController: UIViewController, FizzBuzzViewContract {
 
     private func setupUI() {
         view.backgroundColor = .white
+        title = NSLocalizedString("fizz_buzz_title", comment: "")
+
         let stackView = createStackView()
         let scrollView = UIScrollView()
         scrollView.addSubview(stackView)
