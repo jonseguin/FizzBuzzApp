@@ -14,4 +14,7 @@ struct ChartViewModel {
 }
 
 struct ChartCellViewModel {
+    let title: String
+    let numberHits: Int
+    let totalHits: Int
 }

@@ -29,6 +29,7 @@
 		4AF7CB942670B32200EB4DCF /* ChartPresenterImplementation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AF7CB932670B32200EB4DCF /* ChartPresenterImplementation.swift */; };
 		4AF7CB982670B68200EB4DCF /* ChartTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AF7CB972670B68200EB4DCF /* ChartTableViewCell.swift */; };
 		4AF7CB9A2670B6A700EB4DCF /* ChartViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AF7CB992670B6A700EB4DCF /* ChartViewModel.swift */; };
+		4AF7CB9C2670B9E500EB4DCF /* ChartViewModelMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AF7CB9B2670B9E500EB4DCF /* ChartViewModelMapper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -56,6 +57,7 @@
 		4AF7CB932670B32200EB4DCF /* ChartPresenterImplementation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartPresenterImplementation.swift; sourceTree = "<group>"; };
 		4AF7CB972670B68200EB4DCF /* ChartTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartTableViewCell.swift; sourceTree = "<group>"; };
 		4AF7CB992670B6A700EB4DCF /* ChartViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartViewModel.swift; sourceTree = "<group>"; };
+		4AF7CB9B2670B9E500EB4DCF /* ChartViewModelMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartViewModelMapper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -238,6 +240,7 @@
 			isa = PBXGroup;
 			children = (
 				4AF7CB992670B6A700EB4DCF /* ChartViewModel.swift */,
+				4AF7CB9B2670B9E500EB4DCF /* ChartViewModelMapper.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -341,6 +344,7 @@
 				4AF7CB942670B32200EB4DCF /* ChartPresenterImplementation.swift in Sources */,
 				4A2A1DBB266E6CC100661CE7 /* FizzBuzzPresenterImplementation.swift in Sources */,
 				4A2A1DC3266E726F00661CE7 /* FizzBuzzViewModel.swift in Sources */,
+				4AF7CB9C2670B9E500EB4DCF /* ChartViewModelMapper.swift in Sources */,
 				4AF7CB922670B30A00EB4DCF /* ChartPresenter.swift in Sources */,
 				4A2A1DBF266E6ECD00661CE7 /* FizzBuzz.swift in Sources */,
 				4A6F7CEC266E1F1C0044F58B /* AppDelegate.swift in Sources */,

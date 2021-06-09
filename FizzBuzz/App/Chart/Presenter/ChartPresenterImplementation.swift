@@ -19,6 +19,12 @@ class ChartPresenterImplementation: ChartPresenter {
     }
 
     func start() {
-
+        let totalHitsCount = textFieldTrackingRepository.getTotalHitsCount()
+        var allHitsCount: [FizzBuzzFieldType: Int] = [:]
+        FizzBuzzFieldType.allCases.forEach {
+            allHitsCount[$0] = textFieldTrackingRepository.getHitsCount(for: $0)
+        }
+        let viewModel = ChartViewModelMapper(allHitsCount: allHitsCount, totalHitsCount: totalHitsCount).map()
+        viewContract?.display(viewModel: viewModel)
     }
 }

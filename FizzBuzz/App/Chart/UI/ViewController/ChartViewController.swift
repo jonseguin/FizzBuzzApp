@@ -22,6 +22,13 @@ class ChartViewController: UIViewController,
         presenter?.start()
     }
 
+    // MARK: - ChartViewContract
+
+    func display(viewModel: ChartViewModel) {
+        self.viewModel = viewModel
+        tableView.reloadData()
+    }
+
     // MARK: - UITableViewDataSource
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum FizzBuzzFieldType {
+enum FizzBuzzFieldType: CaseIterable, Hashable {
     case fizzValue
     case buzzValue
     case fizzText

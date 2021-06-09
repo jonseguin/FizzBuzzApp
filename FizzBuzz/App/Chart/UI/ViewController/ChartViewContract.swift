@@ -8,4 +8,5 @@
 import Foundation
 
 protocol ChartViewContract: AnyObject {
+    func display(viewModel: ChartViewModel)
 }

@@ -13,3 +13,8 @@
 "fizz_text_textfield_placeholder" = "Fizz text ?";
 "buzz_text_textfield_placeholder" = "Buzz text ?";
 "limit_textfield_placeholder" = "Limit ?";
+"fizz_value_title" = "Fizz value";
+"buzz_value_title" = "Buzz value";
+"fizz_text_title" = "Fizz text";
+"buzz_text_title" = "Buzz text";
+"limit_title" = "Limit";
