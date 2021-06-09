@@ -27,6 +27,8 @@
 		4AF7CB902670B2D100EB4DCF /* ChartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AF7CB8F2670B2D100EB4DCF /* ChartViewController.swift */; };
 		4AF7CB922670B30A00EB4DCF /* ChartPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AF7CB912670B30A00EB4DCF /* ChartPresenter.swift */; };
 		4AF7CB942670B32200EB4DCF /* ChartPresenterImplementation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AF7CB932670B32200EB4DCF /* ChartPresenterImplementation.swift */; };
+		4AF7CB982670B68200EB4DCF /* ChartTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AF7CB972670B68200EB4DCF /* ChartTableViewCell.swift */; };
+		4AF7CB9A2670B6A700EB4DCF /* ChartViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AF7CB992670B6A700EB4DCF /* ChartViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,6 +54,8 @@
 		4AF7CB8F2670B2D100EB4DCF /* ChartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartViewController.swift; sourceTree = "<group>"; };
 		4AF7CB912670B30A00EB4DCF /* ChartPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartPresenter.swift; sourceTree = "<group>"; };
 		4AF7CB932670B32200EB4DCF /* ChartPresenterImplementation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartPresenterImplementation.swift; sourceTree = "<group>"; };
+		4AF7CB972670B68200EB4DCF /* ChartTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartTableViewCell.swift; sourceTree = "<group>"; };
+		4AF7CB992670B6A700EB4DCF /* ChartViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -215,8 +219,8 @@
 		4AF7CB8A2670B2A500EB4DCF /* UI */ = {
 			isa = PBXGroup;
 			children = (
-				4AF7CB8D2670B2C100EB4DCF /* ChartViewContract.swift */,
-				4AF7CB8F2670B2D100EB4DCF /* ChartViewController.swift */,
+				4AF7CB962670B5EA00EB4DCF /* View */,
+				4AF7CB952670B5E200EB4DCF /* ViewController */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -233,8 +237,26 @@
 		4AF7CB8C2670B2B000EB4DCF /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				4AF7CB992670B6A700EB4DCF /* ChartViewModel.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		4AF7CB952670B5E200EB4DCF /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				4AF7CB8D2670B2C100EB4DCF /* ChartViewContract.swift */,
+				4AF7CB8F2670B2D100EB4DCF /* ChartViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		4AF7CB962670B5EA00EB4DCF /* View */ = {
+			isa = PBXGroup;
+			children = (
+				4AF7CB972670B68200EB4DCF /* ChartTableViewCell.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -307,10 +329,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4AF7CB982670B68200EB4DCF /* ChartTableViewCell.swift in Sources */,
 				4A2A1DB7266E6C9800661CE7 /* FizzBuzzPresenter.swift in Sources */,
 				4A6F7CF0266E1F1C0044F58B /* FizzBuzzViewController.swift in Sources */,
 				4A2A1DCA266E751800661CE7 /* GetFizzBuzzResultInteractorImplementation.swift in Sources */,
 				4A2A1DBD266E6CD800661CE7 /* FizzBuzzViewContract.swift in Sources */,
+				4AF7CB9A2670B6A700EB4DCF /* ChartViewModel.swift in Sources */,
 				4A1795E5266F608E00BC811A /* TextFieldTrackingRepository.swift in Sources */,
 				4AF7CB8E2670B2C100EB4DCF /* ChartViewContract.swift in Sources */,
 				4A2A1DC8266E750F00661CE7 /* GetFizzBuzzResultInteractor.swift in Sources */,
