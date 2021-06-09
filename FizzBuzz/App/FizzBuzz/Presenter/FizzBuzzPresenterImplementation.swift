@@ -45,8 +45,11 @@ class FizzBuzzPresenterImplementation: FizzBuzzPresenter {
         case .limit:
             fizzBuzz.limit = Int(text) ?? FizzBuzz.default.limit
         }
-        textFieldTrackingRepository.incrementHit(for: fieldType)
         reloadViewModel()
+    }
+
+    func didEndEditingWithUpdate(fieldType: FizzBuzzFieldType) {
+        textFieldTrackingRepository.incrementHit(for: fieldType)
     }
 
     func didTapStatisticsButton() {

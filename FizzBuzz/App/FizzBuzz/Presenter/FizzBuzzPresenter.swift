@@ -8,6 +8,7 @@
 protocol FizzBuzzPresenter: AnyObject {
     func start()
     func didUpdate(fieldType: FizzBuzzFieldType, with text: String?)
+    func didEndEditingWithUpdate(fieldType: FizzBuzzFieldType)
     func didTapStatisticsButton()
 }
 

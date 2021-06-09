@@ -25,6 +25,7 @@ class FizzBuzzViewController: UIViewController,
     private lazy var fizzTextField = createTextField(placeholder: NSLocalizedString("fizz_text_textfield_placeholder", comment: ""))
     private lazy var buzzTextField = createTextField(placeholder: NSLocalizedString("buzz_text_textfield_placeholder", comment: ""))
     private lazy var resultLabel = createResultLabel()
+    private var editingTextField: UITextField?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -104,6 +105,7 @@ class FizzBuzzViewController: UIViewController,
         textField.heightAnchor.constraint(equalToConstant: 48).isActive = true
         textField.placeholder = placeholder
         textField.addTarget(self, action: #selector(textDidChange), for: .editingChanged)
+        textField.addTarget(self, action: #selector(textEditingDidEnd), for: .editingDidEnd)
         textField.borderStyle = .roundedRect
         textField.clearButtonMode = .whileEditing
         textField.delegate = self
@@ -117,6 +119,7 @@ class FizzBuzzViewController: UIViewController,
         textField.heightAnchor.constraint(equalToConstant: 48).isActive = true
         textField.placeholder = placeholder
         textField.addTarget(self, action: #selector(textDidChange), for: .editingChanged)
+        textField.addTarget(self, action: #selector(textEditingDidEnd), for: .editingDidEnd)
         textField.borderStyle = .roundedRect
         textField.clearButtonMode = .whileEditing
         textField.delegate = self
@@ -140,6 +143,7 @@ class FizzBuzzViewController: UIViewController,
     }
 
     @objc private func textDidChange(_ textField: UITextField) {
+        editingTextField = textField
         switch textField {
         case fizzNumberField:
             presenter?.didUpdate(fieldType: .fizzValue, with: textField.text)
@@ -154,6 +158,25 @@ class FizzBuzzViewController: UIViewController,
         default:
             break
         }
+    }
+
+    @objc private func textEditingDidEnd(_ textField: UITextField) {
+        guard let editingTextField = editingTextField else { return }
+        switch editingTextField {
+        case fizzNumberField:
+            presenter?.didEndEditingWithUpdate(fieldType: .fizzValue)
+        case buzzNumberField:
+            presenter?.didEndEditingWithUpdate(fieldType: .buzzValue)
+        case fizzTextField:
+            presenter?.didEndEditingWithUpdate(fieldType: .fizzText)
+        case buzzTextField:
+            presenter?.didEndEditingWithUpdate(fieldType: .buzzText)
+        case limitNumberField:
+            presenter?.didEndEditingWithUpdate(fieldType: .limit)
+        default:
+            break
+        }
+        self.editingTextField = nil
     }
 
     @objc private func didTapRightBarButton() {
