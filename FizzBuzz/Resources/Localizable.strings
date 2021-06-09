@@ -7,6 +7,7 @@
 */
 
 "fizz_buzz_title" = "FizzBuzz";
+"chart_title" = "Chart";
 "fizz_value_textfield_placeholder" = "Fizz value ?";
 "buzz_value_textfield_placeholder" = "Buzz value ?";
 "fizz_text_textfield_placeholder" = "Fizz text ?";

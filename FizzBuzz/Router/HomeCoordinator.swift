@@ -10,6 +10,7 @@ import UIKit
 class HomeCoordinator: NSObject, FizzBuzzPresenterDelegate {
 
     private let window: UIWindow
+    private var navigationController: UINavigationController?
 
     init(window: UIWindow) {
         self.window = window
@@ -28,11 +29,18 @@ class HomeCoordinator: NSObject, FizzBuzzPresenterDelegate {
         let navigationController = UINavigationController(rootViewController: viewController)
         window.rootViewController = navigationController
         window.makeKeyAndVisible()
+        self.navigationController = navigationController
     }
 
     // MARK: - FizzBuzzPresenterDelegate
 
     func fizzBuzzPresenterDidRequestStatistics(_ presenter: FizzBuzzPresenter) {
-        // TODO Handle opening of statistics VC
+        let chartViewController = ChartViewController()
+        let presenter = ChartPresenterImplementation(
+            viewContract: chartViewController,
+            textFieldTrackingRepository: TextFieldTrackingRepositoryImplementation()
+        )
+        chartViewController.presenter = presenter
+        navigationController?.pushViewController(chartViewController, animated: true)
     }
 }
