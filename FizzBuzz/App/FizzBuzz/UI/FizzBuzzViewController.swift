@@ -13,7 +13,9 @@ private enum Constants {
     static let defaultSpacing: CGFloat = 12.0
 }
 
-class FizzBuzzViewController: UIViewController, FizzBuzzViewContract {
+class FizzBuzzViewController: UIViewController,
+                              FizzBuzzViewContract,
+                              UITextFieldDelegate {
 
     var presenter: FizzBuzzPresenter?
 
@@ -34,6 +36,13 @@ class FizzBuzzViewController: UIViewController, FizzBuzzViewContract {
 
     func display(viewModel: FizzBuzzViewModel) {
         resultLabel.text = viewModel.result
+    }
+
+    // MARK: - UITextFieldDelegate
+
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
     }
 
     // MARK: - Private
@@ -97,18 +106,20 @@ class FizzBuzzViewController: UIViewController, FizzBuzzViewContract {
         textField.addTarget(self, action: #selector(textDidChange), for: .editingChanged)
         textField.borderStyle = .roundedRect
         textField.clearButtonMode = .whileEditing
+        textField.delegate = self
         return textField
     }
 
     private func createTextField(placeholder: String) -> UITextField {
         let textField = UITextField()
         textField.keyboardType = .alphabet
-        textField.returnKeyType = .next
+        textField.returnKeyType = .done
         textField.heightAnchor.constraint(equalToConstant: 48).isActive = true
         textField.placeholder = placeholder
         textField.addTarget(self, action: #selector(textDidChange), for: .editingChanged)
         textField.borderStyle = .roundedRect
         textField.clearButtonMode = .whileEditing
+        textField.delegate = self
         return textField
     }
 
