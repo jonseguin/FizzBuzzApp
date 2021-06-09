@@ -9,22 +9,22 @@ import Foundation
 
 struct ChartViewModelMapper {
 
-    let allHitsCount: [FizzBuzzFieldType: Int]
+    let charts: [Chart]
     let totalHitsCount: Int
 
     func map() -> ChartViewModel {
-        let cells = allHitsCount.keys.map {
-            mapCell(fieldType: $0, hitsCount: allHitsCount[$0] ?? 0)
+        let cells = charts.map {
+            mapCell(chart: $0)
         }
         return ChartViewModel(cells: cells)
     }
 
     // MARK: - Private
 
-    private func mapCell(fieldType: FizzBuzzFieldType, hitsCount: Int) -> ChartCellViewModel {
+    private func mapCell(chart: Chart) -> ChartCellViewModel {
         return ChartCellViewModel(
-            title: fieldType.title,
-            numberHits: hitsCount,
+            title: chart.fieldType.title,
+            numberHits: chart.hitCount,
             totalHits: totalHitsCount
         )
     }
