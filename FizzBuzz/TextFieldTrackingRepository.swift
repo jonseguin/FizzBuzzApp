@@ -10,4 +10,5 @@ import Foundation
 protocol TextFieldTrackingRepository: AnyObject {
     func incrementHit(for fieldType: FizzBuzzFieldType)
     func getHitsCount(for fieldType: FizzBuzzFieldType) -> Int
+    func getTotalHitsCount() -> Int
 }
