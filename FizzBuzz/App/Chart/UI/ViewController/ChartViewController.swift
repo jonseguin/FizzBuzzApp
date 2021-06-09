@@ -48,6 +48,7 @@ class ChartViewController: UIViewController,
         view.backgroundColor = .white
         title = NSLocalizedString("chart_title", comment: "")
 
+        view.addSubview(tableView)
         tableView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
         tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
         tableView.leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true
@@ -58,7 +59,9 @@ class ChartViewController: UIViewController,
     private func createTableView() -> UITableView {
         let tableView = UITableView()
         tableView.dataSource = self
+        tableView.tableFooterView = UIView()
         tableView.register(ChartTableViewCell.self, forCellReuseIdentifier: ChartTableViewCell.identifier)
+        tableView.allowsSelection = false
         return tableView
     }
 }
